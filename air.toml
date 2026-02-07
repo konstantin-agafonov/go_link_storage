@@ -1,0 +1,21 @@
+[build]
+  cmd = "go build -o ./.bin/bot ./cmd/bot/main.go"
+  bin = ".bin/bot"
+  dir = "."
+  include_ext = ["go"]
+  exclude_dir = ["vendor", ".bin"]
+  run_after_build = "chmod +x .bin/bot"
+  # Poll for changes so Air detects edits when source is bind-mounted (e.g. in Docker)
+  poll = true
+  poll_interval = 500
+
+[run]
+  kill_delay = 500  # milliseconds
+  # Other run parameters...
+  # args = ["--config", "prod.yaml"]
+  # env = ["KEY=VALUE"]
+
+[log]
+  level = "debug"
+  time = true
+  

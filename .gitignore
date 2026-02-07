@@ -1,0 +1,8 @@
+main
+tmp
+.idea
+bot
+.bin
+.env
+data/*
+file_storage/*
