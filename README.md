@@ -1,6 +1,7 @@
 Это развитие бота, который получился у Николая Тузова в его курсе по созданию телеграм-бота на Golang.
 
-[Ссылка на плейлист курса на Youtube](https://www.youtube.com/watch?v=PnOrFYtZJUI&list=PLFAQFisfyqlWDwouVTUztKX2wUjYQ4T3l) 
+[Ссылка на плейлист курса на Youtube](https://www.youtube.com/watch?v=PnOrFYtZJUI&list=PLFAQFisfyqlWDwouVTUztKX2wUjYQ4T3l)
+
 [Ссылка на репозиторий с кодом получившегося бота на Github](https://github.com/GolangLessons/Read-Adviser-Bot/tree/lessons) 
 
 Изменения:
