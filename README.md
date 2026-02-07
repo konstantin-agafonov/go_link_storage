@@ -11,3 +11,9 @@
 - Добавил реализацию Storage на PostgreSQL
 - Выделил Fetcher отдельно от Processor
 - Добавил реализацию Client и Fetcher через библиотеку [https://github.com/go-telegram/bot](https://github.com/go-telegram/bot)
+
+Инструкция по запуску:
+
+1) Создать файл `.env` и cкопировать туда содежимое `.env.example`
+2) В файле `.env` поставить значение ключа своего телеграм-бота
+3) `docker compose up --build`
