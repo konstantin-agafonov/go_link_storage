@@ -31,31 +31,6 @@ func newBasePath(token string) string {
 	return "bot" + token
 }
 
-// Updates fetches updates from the Telegram Bot API.
-// offset specifies the update ID to start from, limit specifies the maximum number of updates.
-func (c *Client) Updates(offset int, limit int) (updates []Update, err error) {
-	/*defer func() { err = e.WrapIfErr("can't get updates", err) }()
-
-	q := url.Values{}
-	q.Add("offset", strconv.Itoa(offset))
-	q.Add("limit", strconv.Itoa(limit))
-
-	data, err := c.doRequest(getUpdatesMethod, q)
-	if err != nil {
-		return nil, err
-	}
-
-	var res UpdatesResponse
-
-	if err := json.Unmarshal(data, &res); err != nil {
-		return nil, err
-	}
-
-	return res.Result, nil*/
-
-	return nil, nil
-}
-
 // SendMessage sends a text message to the specified chat.
 func (c *Client) SendMessage(chatID int, text string) error {
 	_, err := c.Bot.SendMessage(c.Ctx, &bot.SendMessageParams{

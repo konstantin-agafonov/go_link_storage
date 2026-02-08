@@ -1,7 +1,6 @@
 package tg_custom_fetcher
 
 import (
-	"errors"
 	"go_link_storage/pkg/clients/tg_custom_client"
 	"go_link_storage/pkg/events"
 	"go_link_storage/pkg/events/tg_processor"
@@ -14,13 +13,6 @@ type Fetcher struct {
 	tg     *tg_custom_client.Client // Telegram API client
 	offset int                      // Offset for fetching updates
 }
-
-var (
-	// ErrUnknownEventType is returned when an event type cannot be determined.
-	ErrUnknownEventType = errors.New("unknown event type")
-	// ErrUnknownMetaType is returned when event metadata has an unexpected type.
-	ErrUnknownMetaType = errors.New("unknown meta type")
-)
 
 // New creates a new Telegram event processor with the given client.
 func New(client *tg_custom_client.Client) *Fetcher {

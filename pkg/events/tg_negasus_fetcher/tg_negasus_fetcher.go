@@ -2,7 +2,6 @@ package tg_negasus_fetcher
 
 import (
 	"context"
-	"errors"
 	"go_link_storage/pkg/clients/tg_negasus_client"
 	"go_link_storage/pkg/events"
 	"go_link_storage/pkg/events/tg_processor"
@@ -16,13 +15,6 @@ type Fetcher struct {
 	tg *tg_negasus_client.Client // Telegram API client
 }
 
-var (
-	// ErrUnknownEventType is returned when an event type cannot be determined.
-	ErrUnknownEventType = errors.New("unknown event type")
-	// ErrUnknownMetaType is returned when event metadata has an unexpected type.
-	ErrUnknownMetaType = errors.New("unknown meta type")
-)
-
 // New creates a new Telegram event processor with the given client.
 func New(client *tg_negasus_client.Client) *Fetcher {
 	return &Fetcher{
@@ -32,6 +24,7 @@ func New(client *tg_negasus_client.Client) *Fetcher {
 
 func (f *Fetcher) Start(handleEventsCallback func(events []events.Event) error, batchSize int) {
 	opts := []bot.Option{
+		bot.WithDebug(),
 		bot.WithDefaultHandler(func(ctx context.Context, b *bot.Bot, update *models.Update) {
 			res := make([]events.Event, 0, 1)
 			res = append(res, event(update))
